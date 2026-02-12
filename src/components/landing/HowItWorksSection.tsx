@@ -9,22 +9,22 @@ const steps = [
     description: "Registe-se em 2 minutos. Sem cartão de crédito, sem compromisso.",
   },
   {
-    icon: FileEdit,
+    icon: CreditCard,
     number: "02",
+    title: "Efetue o Pagamento",
+    description: "Escolha o plano e anexe o comprovativo de pagamento.",
+  },
+  {
+    icon: FileEdit,
+    number: "03",
     title: "Configure o Negócio",
-    description: "Adicione o seu logótipo, dados fiscais e personalize os templates.",
+    description: "Adicione o seu logótipo e dados fiscais.",
   },
   {
     icon: Send,
-    number: "03",
+    number: "04",
     title: "Crie e Envie Faturas",
     description: "Preencha os dados do cliente e serviço. Envie com um toque.",
-  },
-  {
-    icon: CreditCard,
-    number: "04",
-    title: "Receba Pagamentos",
-    description: "Acompanhe pagamentos e receba notificações em tempo real.",
   },
 ];
 

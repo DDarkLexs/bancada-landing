@@ -25,9 +25,9 @@ export const CTASection = () => {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="w-20 h-20 rounded-2xl gradient-primary flex items-center justify-center mx-auto mb-8 shadow-glow"
+            className="w-20 h-20 rounded-2xl bg-white   flex items-center justify-center mx-auto mb-8 shadow-glow"
           >
-            <Smartphone className="w-10 h-10 text-primary-foreground" />
+            <img src="/icon.png" className="text-primary-foreground" />
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6">
@@ -45,17 +45,17 @@ export const CTASection = () => {
               Descarregar
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
+          {/*   <Button
               variant="outline"
               size="xl"
               className="border-background/30 text-background hover:bg-background/10"
             >
               Agendar Demonstração
-            </Button>
+            </Button> */}
           </div>
 
           <p className="mt-8 text-sm text-background/50">
-            Configuração em menos de 5 minutos • Sem cartão de crédito • Suporte em português
+            Configuração em menos de 5 minutos • Suporte
           </p>
         </motion.div>
       </div>

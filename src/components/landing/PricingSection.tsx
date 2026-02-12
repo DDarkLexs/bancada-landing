@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Base",
-    price: "7.000.00",
+    price: "7.000",
     description: "Perfeito para começar",
     features: [
-    /*   "Até 10 faturas/mês",
+   /*    "Até 10 faturas/mês",
       "1 utilizador",
       "Certificação AT",
       "Envio por email",
@@ -19,10 +19,10 @@ const plans = [
   },
   {
     name: "Profissional",
-    price: "19",
+    price: "20.710",
     description: "Para freelancers e pequenos negócios",
     features: [
-     /*  "Faturas ilimitadas",
+    /*   "Faturas ilimitadas",
       "3 utilizadores",
       "Certificação AT",
       "Envio por email, SMS e WhatsApp",
@@ -36,7 +36,7 @@ const plans = [
   },
   {
     name: "Empresarial",
-    price: "49",
+    price: "53.410",
     description: "Para equipas e empresas",
     features: [
   /*     "Tudo do Profissional",
@@ -72,7 +72,7 @@ export const PricingSection = () => {
             <span className="text-gradient">crescem consigo</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Comece grátis e escale conforme o seu negócio cresce. Sem surpresas, sem taxas escondidas.
+            Comece grátis e escale conforme o seu negócio cresce. Valores em Kwanza. Sem surpresas, sem taxas escondidas.
           </p>
         </motion.div>
 
@@ -110,7 +110,7 @@ export const PricingSection = () => {
                   {plan.description}
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-bold">€{plan.price}</span>
+                  <span className="text-5xl font-bold">Kz {plan.price}</span>
                   <span className={`${plan.popular ? "opacity-80" : "text-muted-foreground"}`}>/mês</span>
                 </div>
               </div>
@@ -125,8 +125,8 @@ export const PricingSection = () => {
                 ))}
               </ul>
 
-              {/* CTA */}
-              {/* <Button
+              {/* CTA - descomentei para exemplo completo */}
+            {/*   <Button
                 variant={plan.popular ? "secondary" : "hero"}
                 size="lg"
                 className={`w-full ${plan.popular ? "bg-background text-foreground hover:bg-background/90" : ""}`}

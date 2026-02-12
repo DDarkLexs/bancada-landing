@@ -8,13 +8,14 @@ import {
   Users,
   Clock,
   Smartphone,
+  Package,
 } from "lucide-react";
 
 const features = [
   {
     icon: FileText,
     title: "Faturas Profissionais",
-    description: "Templates personalizáveis com a sua marca. Crie faturas em menos de 30 segundos.",
+    description: "Crie faturas em menos de 30 segundos. Design moderno e profissional.",
   },
   {
     icon: Zap,
@@ -32,6 +33,16 @@ const features = [
     description: "Fature em euros ou qualquer outra moeda. Perfeito para clientes internacionais.",
   },
   {
+    icon: FileText, // ou outro ícone específico para orçamentos/proformas
+    title: "Orçamentos e Faturas Proforma",
+    description: "Crie orçamentos detalhados e faturas proforma antes da confirmação do serviço.",
+  },
+  {
+    icon: Package,
+    title: "Gestão de Stock",
+    description: "Controle de inventário integrado. Atualização automática do stock ao faturar.",
+  },
+  {
     icon: BarChart3,
     title: "Relatórios Detalhados",
     description: "Acompanhe receitas, despesas e IVA com dashboards intuitivos.",
@@ -39,12 +50,7 @@ const features = [
   {
     icon: Users,
     title: "Gestão de Clientes",
-    description: "Base de dados completa com histórico de faturas e pagamentos.",
-  },
-  {
-    icon: Clock,
-    title: "Faturas Recorrentes",
-    description: "Automatize cobranças mensais e poupe tempo em tarefas repetitivas.",
+    description: "Registo básico de clientes para emissão rápida de faturas.",
   },
   {
     icon: Smartphone,
