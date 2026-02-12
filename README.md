@@ -36,6 +36,45 @@ npm i
 npm run dev
 ```
 
+## PocketBase (Planos)
+
+A secção de preços já está preparada para carregar os planos da coleção `Plan` no PocketBase.
+
+1. Crie um `.env` com:
+
+```bash
+VITE_POCKETBASE_URL=http://127.0.0.1:8090
+```
+
+2. Garanta que a coleção `Plan` existe com os campos:
+   - `title` (text)
+   - `price` (number)
+   - `description` (text)
+
+3. Adicione os dados dos planos (exemplo):
+
+```json
+[
+  {
+    "title": "Base",
+    "price": 7000,
+    "description": "Perfeito para começar"
+  },
+  {
+    "title": "Profissional",
+    "price": 20710,
+    "description": "Para freelancers e pequenos negócios"
+  },
+  {
+    "title": "Empresarial",
+    "price": 53410,
+    "description": "Para equipas e empresas"
+  }
+]
+```
+
+Se o PocketBase não estiver configurado ou não devolver dados, a landing usa automaticamente os planos padrão (fallback).
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
