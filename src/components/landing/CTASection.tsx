@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const CTASection = () => {
   return (
@@ -38,13 +39,17 @@ export const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to={'https://download1582.mediafire.com/9ug1vsqohdrgcrxSAzQcm98nIT2tAqu-bC68zfnFD9_1rMWYtKZ2usja0w-A60kQh41Fi9OZsvNk5ICxBbyfmPSOQrGa5b3XytVfNbPuC20UyXzaVNvEE-x5VYXwzOT7-G1jpAcvrQZuzRxfPPsqCite8KsU_FFnsquswi7FNVPtDFnt/2aogp7uyefs9360/bancada_v1.apk'}>
             <Button
               size="xl"
               className="bg-background text-foreground hover:bg-background/90 group"
-            >
+              
+
+              >
               Descarregar
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+              </Link>
           {/*   <Button
               variant="outline"
               size="xl"
