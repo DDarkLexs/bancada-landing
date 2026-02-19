@@ -35,10 +35,10 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-                <Smartphone className="w-5 h-5 text-primary-foreground" />
+              <div className="w-20 h-20 rounded-xl  flex items-center justify-center">
+                <img src="/icon.png" className="text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-foreground">FaturaMóvel</span>
+              <span className="text-xl font-bold text-foreground">Bancada</span>
             </a>
             <p className="text-muted-foreground mb-6 max-w-xs">
               A forma mais simples de criar e enviar faturas profissionais diretamente do seu telemóvel.
@@ -46,15 +46,15 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>suporte@faturamovel.pt</span>
+                <span>antoniolexis2001@outlook.com</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+351 210 123 456</span>
+                <span>+244 957 195 382</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>Lisboa, Portugal</span>
+                <span>Luanda, Angola</span>
               </div>
             </div>
           </div>
@@ -128,15 +128,15 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2024 FaturaMóvel. Todos os direitos reservados.
+            © 2026 Bancada. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
             <span className="text-xs text-muted-foreground px-3 py-1 rounded-full bg-secondary">
-              🇵🇹 Made in Portugal
+              Made in Angola
             </span>
-            <span className="text-xs text-muted-foreground px-3 py-1 rounded-full bg-success/10 text-success">
+            {/* <span className="text-xs text-muted-foreground px-3 py-1 rounded-full bg-success/10 text-success">
               ✓ Certificado AT
-            </span>
+            </span> */}
           </div>
         </div>
       </div>

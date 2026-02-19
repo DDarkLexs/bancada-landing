@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { APP_LINK_URL } from "@/contants";
 
 const navLinks = [
   { name: "Funcionalidades", href: "#features" },
@@ -43,9 +45,12 @@ export const Header = () => {
             {/* <Button variant="ghost" size="sm">
               Entrar
             </Button> */}
+                      <Link to={APP_LINK_URL}>
+            
             <Button variant="hero" size="sm">
               Descarregar
             </Button>
+                      </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,9 +92,11 @@ export const Header = () => {
                 {/* <Button variant="ghost" className="w-full">
                   Entrar
                 </Button> */}
+                                      <Link to={APP_LINK_URL}>
                 <Button variant="hero" className="w-full">
                  Descarregar
                 </Button>
+            </Link>
               </div>
             </nav>
           </motion.div>

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { APP_LINK_URL } from "@/contants";
 
 export const CTASection = () => {
   return (
@@ -34,17 +36,22 @@ export const CTASection = () => {
             Pronto para simplificar a sua faturação?
           </h2>
           <p className="text-lg text-background/70 mb-10 max-w-xl mx-auto">
-            Junte-se a milhares de empresas portuguesas que já faturam de forma simples e legal com o FaturaMóvel.
+            Descubra o Bancada, o novo sistema de faturação angolano no telemóvel que torna a emissão de faturas simples, rápida e legal para o seu negócio.
           </p>
 
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to={APP_LINK_URL}>
             <Button
               size="xl"
               className="bg-background text-foreground hover:bg-background/90 group"
-            >
+              
+
+              >
               Descarregar
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+              </Link>
           {/*   <Button
               variant="outline"
               size="xl"

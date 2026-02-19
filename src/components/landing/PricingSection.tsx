@@ -119,7 +119,7 @@ export const PricingSection = () => {
                 <h3 className={`text-xl font-semibold mb-2 ${plan.popular ? "" : "text-foreground"}`}>{plan.name}</h3>
                 <p className={`text-sm mb-4 ${plan.popular ? "opacity-80" : "text-muted-foreground"}`}>{plan.description}</p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-bold">Kz {plan.price}</span>
+                  <span className="text-3xl font-bold">Kz {plan.price}</span>
                   <span className={`${plan.popular ? "opacity-80" : "text-muted-foreground"}`}>/mês</span>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export const PricingSection = () => {
           ))}
         </div>
 
-        <motion.p
+       {/*  <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -144,7 +144,7 @@ export const PricingSection = () => {
           className="text-center text-muted-foreground mt-12"
         >
           🔒 Garantia de reembolso de 30 dias. Cancele a qualquer momento.
-        </motion.p>
+        </motion.p> */}
       </div>
     </section>
   );
