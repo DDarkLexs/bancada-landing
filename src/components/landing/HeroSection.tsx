@@ -97,7 +97,7 @@ export const HeroSection = () => {
                                 className='group'
                             >
                                 <Play className='w-5 h-5' />
-                                Contactar Demomostração
+                                Contactar Suporte
                             </Button>
                         </motion.div>
 
