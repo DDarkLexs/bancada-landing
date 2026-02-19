@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { APP_LINK_URL } from "@/contants";
 
 const navLinks = [
   { name: "Funcionalidades", href: "#features" },
@@ -44,7 +45,7 @@ export const Header = () => {
             {/* <Button variant="ghost" size="sm">
               Entrar
             </Button> */}
-                      <Link to={'https://download1582.mediafire.com/9ug1vsqohdrgcrxSAzQcm98nIT2tAqu-bC68zfnFD9_1rMWYtKZ2usja0w-A60kQh41Fi9OZsvNk5ICxBbyfmPSOQrGa5b3XytVfNbPuC20UyXzaVNvEE-x5VYXwzOT7-G1jpAcvrQZuzRxfPPsqCite8KsU_FFnsquswi7FNVPtDFnt/2aogp7uyefs9360/bancada_v1.apk'}>
+                      <Link to={APP_LINK_URL}>
             
             <Button variant="hero" size="sm">
               Descarregar
@@ -91,7 +92,7 @@ export const Header = () => {
                 {/* <Button variant="ghost" className="w-full">
                   Entrar
                 </Button> */}
-                                      <Link to={'https://download1582.mediafire.com/9ug1vsqohdrgcrxSAzQcm98nIT2tAqu-bC68zfnFD9_1rMWYtKZ2usja0w-A60kQh41Fi9OZsvNk5ICxBbyfmPSOQrGa5b3XytVfNbPuC20UyXzaVNvEE-x5VYXwzOT7-G1jpAcvrQZuzRxfPPsqCite8KsU_FFnsquswi7FNVPtDFnt/2aogp7uyefs9360/bancada_v1.apk'}>
+                                      <Link to={APP_LINK_URL}>
                 <Button variant="hero" className="w-full">
                  Descarregar
                 </Button>

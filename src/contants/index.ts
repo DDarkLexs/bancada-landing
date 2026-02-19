@@ -1,0 +1,1 @@
+export const APP_LINK_URL = import.meta.env.VITE_URL;

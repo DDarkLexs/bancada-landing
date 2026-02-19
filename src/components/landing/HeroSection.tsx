@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import {ArrowRight, CheckCircle2, Play} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {PhoneMockup} from './PhoneMockup';
+import { APP_LINK_URL } from '@/contants';
 
 const benefits = [
     'Faturas rápidas',
@@ -78,7 +79,7 @@ export const HeroSection = () => {
                         >
                             <Link
                                 to={
-                                    'https://download1582.mediafire.com/9ug1vsqohdrgcrxSAzQcm98nIT2tAqu-bC68zfnFD9_1rMWYtKZ2usja0w-A60kQh41Fi9OZsvNk5ICxBbyfmPSOQrGa5b3XytVfNbPuC20UyXzaVNvEE-x5VYXwzOT7-G1jpAcvrQZuzRxfPPsqCite8KsU_FFnsquswi7FNVPtDFnt/2aogp7uyefs9360/bancada_v1.apk'
+                                  APP_LINK_URL
                                 }
                             >
                                 <Button
