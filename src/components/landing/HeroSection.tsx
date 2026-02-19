@@ -97,7 +97,7 @@ export const HeroSection = () => {
                                 className='group'
                             >
                                 <Play className='w-5 h-5' />
-                                Ver Demo
+                                Contactar Demomostração
                             </Button>
                         </motion.div>
 
@@ -108,10 +108,10 @@ export const HeroSection = () => {
                             transition={{delay: 0.8}}
                             className='mt-8 text-sm text-muted-foreground'
                         >
-                            <span className='font-semibold text-foreground'>
+                           {/*  <span className='font-semibold text-foreground'>
                                 +5.000
                             </span>{' '}
-                            empresas já confiam em nós
+                            empresas já confiam em nós */}
                         </motion.p>
                     </motion.div>
 
