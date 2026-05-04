@@ -1,4 +1,4 @@
-import { Smartphone, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   produto: [
@@ -20,10 +20,8 @@ const footerLinks = {
     { name: "Webinars", href: "#" },
   ],
   legal: [
-    { name: "Termos de Serviço", href: "#" },
-    { name: "Política de Privacidade", href: "#" },
-    { name: "RGPD", href: "#" },
-    { name: "Cookies", href: "#" },
+    { name: "Termos e Política", href: "/termos-e-politica" },
+    { name: "Exclusão de Conta", href: "/exclusao-conta" },
   ],
 };
 
