@@ -14,8 +14,8 @@ const footerLinks = {
     { name: "Contacto", href: "#contact" },
   ],
   recursos: [
+    { name: "Material de Apoio", href: "https://drive.google.com/drive/folders/16EYjksMdCtbnCR5zZ6U1h0_2OAAcozst?usp=sharing" },
     { name: "Central de Ajuda", href: "#" },
-    { name: "Documentação API", href: "#" },
     { name: "Guias de Faturação", href: "#" },
     { name: "Webinars", href: "#" },
   ],
@@ -44,7 +44,7 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>antoniolexis2001@outlook.com</span>
+                <span>geral@anfertech.com</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary" />
