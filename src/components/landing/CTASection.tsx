@@ -45,8 +45,6 @@ export const CTASection = () => {
             <Button
               size="xl"
               className="bg-background text-foreground hover:bg-background/90 group"
-              
-
               >
               Descarregar
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

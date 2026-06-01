@@ -3,7 +3,7 @@ import {motion} from 'framer-motion';
 import {ArrowRight, CheckCircle2, Play} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {PhoneMockup} from './PhoneMockup';
-import { APP_LINK_URL } from '@/contants';
+import { APP_LINK_URL, CONTACT_LINK_URL } from '@/contants';
 
 const benefits = [
     'Faturas rápidas',
@@ -41,18 +41,16 @@ export const HeroSection = () => {
               Novo: Integração com AT Portugal
             </motion.div> */}
 
-                        <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6'>
-                            Faturação simples,{' '}
-                            <span className='text-gradient'>
-                                direto do telemóvel
-                            </span>
-                        </h1>
+            <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6'>
+                Gestão de negócio e{' '}
+                <span className='text-gradient'>
+                    faturação simplificada
+                </span>
+            </h1>
 
-                        <p className='text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0'>
-                            Crie e envie faturas profissionais em segundos.
-                            Ideal para pequenos empreendedores e muitas outras
-                            pequenas empresas em Angola.
-                        </p>
+            <p className='text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0'>
+                Controle vendas, clientes e faturação numa única plataforma.
+            </p>
 
                         {/* Benefits */}
                         <div className='flex flex-wrap justify-center lg:justify-start gap-4 mb-8'>
@@ -75,7 +73,7 @@ export const HeroSection = () => {
                             initial={{opacity: 0, y: 20}}
                             animate={{opacity: 1, y: 0}}
                             transition={{delay: 0.6}}
-                            className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'
+                            className='relative z-20 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'
                         >
                             <Link
                                 to={
@@ -91,6 +89,7 @@ export const HeroSection = () => {
                                     <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
                                 </Button>
                             </Link>
+                            <Link to={CONTACT_LINK_URL}>
                             <Button
                                 variant='heroOutline'
                                 size='xl'
@@ -99,6 +98,7 @@ export const HeroSection = () => {
                                 <Play className='w-5 h-5' />
                                 Contactar Suporte
                             </Button>
+                            </Link>
                         </motion.div>
 
                         {/* Social proof */}
