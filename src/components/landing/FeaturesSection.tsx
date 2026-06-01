@@ -1,12 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   FileText,
   Zap,
-  Shield,
   Globe,
   BarChart3,
   Users,
-  Clock,
   Smartphone,
   Package,
 } from "lucide-react";
@@ -18,29 +16,14 @@ const features = [
     description: "Crie faturas em menos de 30 segundos. Design moderno e profissional.",
   },
   {
-    icon: Zap,
-    title: "Envio Instantâneo",
-    description: "Envie por email, WhatsApp ou SMS. O seu cliente recebe na hora.",
-  },
-/*   {
-    icon: Shield,
-    title: "Certificado AT",
-    description: "100% em conformidade com a Autoridade Tributária portuguesa.",
-  }, */
-  {
     icon: Globe,
     title: "Multi-moeda",
-    description: "Fature em euros ou qualquer outra moeda. Perfeito para clientes internacionais.",
-  },
-  {
-    icon: FileText, // ou outro ícone específico para orçamentos/proformas
-    title: "Orçamentos e Faturas Proforma",
-    description: "Crie orçamentos detalhados e faturas proforma antes da confirmação do serviço.",
+    description: "Fature em euros ou qualquer outra moeda. Ideal para clientes internacionais.",
   },
   {
     icon: Package,
     title: "Gestão de Stock",
-    description: "Controle de inventário integrado. Atualização automática do stock ao faturar.",
+    description: "Controle de inventário integrado. Atualização automática ao faturar.",
   },
   {
     icon: BarChart3,
@@ -50,31 +33,34 @@ const features = [
   {
     icon: Users,
     title: "Gestão de Clientes",
-    description: "Registo básico de clientes para emissão rápida de faturas.",
+    description: "Registo rápido de clientes para emissão ágil de faturas.",
   },
   {
     icon: Smartphone,
     title: "100% Mobile",
-    description: "Fature de qualquer lugar. Tudo o que precisa, no seu bolso.",
+    description: "Fature de qualquer lugar. Interface otimizada para telemóvel.",
+  },
+  {
+    icon: Zap,
+    title: "Envio Instantâneo",
+    description: "Envie por email, WhatsApp ou SMS. O cliente recebe na hora.",
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 
@@ -84,52 +70,55 @@ export const FeaturesSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Funcionalidades
+          <span className="text-primary font-semibold text-sm uppercase tracking-[3px]">
+            FUNCIONALIDADES
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Tudo o que precisa para{" "}
-            <span className="text-gradient">faturar como um pro</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+            Tudo o que precisa para faturar como um pro
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Funcionalidades poderosas, interface simples. Criado para quem quer focar no negócio, não em papelada.
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            Ferramentas poderosas, interface limpa e intuitiva.
           </p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Features Grid - Estilo semelhante à imagem */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-card"
+              whileHover={{ y: -6 }}
+              className="group bg-white border border-border/60 rounded-3xl p-8 h-full flex flex-col hover:shadow-lg hover:border-primary/30 transition-all duration-300"
             >
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-6 h-6 text-primary-foreground" />
+              {/* Icon - Estilo da imagem */}
+              <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+                <feature.icon className="w-6 h-6 text-primary" />
               </div>
 
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-foreground mb-3">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+
+              {/* Description */}
+              <p className="text-muted-foreground text-[15px] leading-relaxed flex-1">
                 {feature.description}
               </p>
 
-              {/* Hover glow */}
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
+              {/* Blue Line - Como na imagem */}
+              <div className="h-0.5 w-10 bg-primary mt-8 rounded-full group-hover:w-16 transition-all duration-300" />
             </motion.div>
           ))}
         </motion.div>
