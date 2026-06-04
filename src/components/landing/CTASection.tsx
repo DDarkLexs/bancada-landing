@@ -56,15 +56,15 @@ export const CTASection = () => {
                   color="black"
                   fontSize="lg"
                   fontWeight="bold"
-                  rounded="2xl"
+                  rounded="xl"
                   _hover={{
                     bg: "white",
                     transform: "translateY(-2px)",
                   }}
                   transition="all 0.3s ease"
                 >
+                  <Icon as={Download}  />
                   Descarregar App
-                  <Icon as={Download} mr={2} />
                 </Button>
               </Link>
             </HStack>

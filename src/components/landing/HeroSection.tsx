@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
-import { Download, CheckCircle2 } from "lucide-react";
+import { Download, CheckCircle2, Check, Zap, WifiOff, Package, BarChart3, Users, Headset } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PhoneMockup } from "./PhoneMockup";
 import { APP_LINK_URL, CONTACT_LINK_URL } from "@/contants";
 import { Button, HStack, Icon, Text, Box, Image } from "@chakra-ui/react";
 
 const benefits = [
-  "Faturas rápidas",
-  "Controlo de stock",
-  "Relatórios claros",
-  "Gestão de clientes",
-  "Suporte dedicado",
+  { label: "Faturas rápidas", icon: Zap },
+  { label: "Funciona sem internet", icon: WifiOff },
+  { label: "Controlo de stock", icon: Package },
+  { label: "Relatórios claros", icon: BarChart3 },
+  { label: "Gestão de clientes", icon: Users },
+  { label: "Suporte dedicado", icon: Headset },
 ];
 
 export const HeroSection = () => {
@@ -42,30 +43,34 @@ export const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-10">
-              A ferramenta completa para gerir vendas, stock e relatório.
+              A ferramenta completa para gerir vendas, stock e emitir relatório.
             </p>
 
             {/* Benefits */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-3 mb-12">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className="flex items-center gap-3 text-muted-foreground"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                  <span className="font-medium">{benefit}</span>
-                </motion.div>
+            <HStack 
+              wrap="wrap" 
+              justify={{ base: "center", lg: "start" }} 
+              gap={6} 
+              mb={12}
+            >
+              {benefits.map((benefit) => (
+                <HStack key={benefit.label} gap={2}>
+                  <Icon 
+                    as={benefit.icon} 
+                    color="blue.400" 
+                    boxSize={5} 
+                  />
+                  <Text fontWeight="medium" color="muted.foreground">{benefit.label}</Text>
+                </HStack>
               ))}
-            </div>
+            </HStack>
 
             {/* CTAs - Melhorados com Chakra UI */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
+              className="mb-10"
             >
               <HStack 
                 gap={4} 
@@ -82,12 +87,12 @@ export const HeroSection = () => {
                     px={10}
                     fontSize="lg"
                     fontWeight="semibold"
-                    rounded="2xl"
-                    shadow="lg"
-                    _hover={{
-                      shadow: "xl",
-                      transform: "translateY(-2px)",
-                    }}
+                    rounded="xl"
+                    boxShadow="0 4px 14px 0 rgba(29, 87, 181, 0.39)"
+                _hover={{
+                  transform: "translateY(-1px)",
+                  boxShadow: "0 6px 20px rgba(29, 87, 181, 0.23)",
+                }}
                     transition="all 0.3s ease"
                   >
                     <Icon as={Download} boxSize={5} mr={2} />
@@ -104,7 +109,7 @@ export const HeroSection = () => {
                     px={8}
                     fontSize="lg"
                     fontWeight="semibold"
-                    rounded="2xl"
+                    rounded="xl"
                     border="2px solid"
                     borderColor="gray.300"
                     bg="white"
@@ -119,10 +124,10 @@ export const HeroSection = () => {
                   >
                     <Image
                       src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                      w="25px"
-                      h="25px"
+                      w="35px"
+                      h="35px"
                       alt="WhatsApp"
-                      mr={2}
+                      
                     />
                     Falar no WhatsApp
                   </Button>

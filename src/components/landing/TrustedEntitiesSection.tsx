@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Box, Container, Heading, Text, Flex, Image } from "@chakra-ui/react";
 
 const companies = [
   { name: "Empresa 1", logo: "/assets/entities/9b901930_d92c_43b4_825a_8ca33d48db1e_ge5m1vt39e_a9kfzt9swe.jpeg" },
@@ -11,31 +12,26 @@ const companies = [
 
 export const TrustedEntitiesSection = () => {
   return (
-    <section className="py-16 bg-background border-y border-border/50">
-      <div className="container mx-auto px-4">
+    <Box as="section" className="py-16 bg-background border-y border-border/50">
+      <Container maxW="container.xl" px={4}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-            CONFIANÇA
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
-            Empresas que já confiam na Bancada
-          </h2>
+          <Box textAlign="center" mb={12}>
+            <Text className="text-primary font-semibold text-sm uppercase tracking-widest">
+              CONFIANÇA
+            </Text>
+            <Heading as="h2" className="text-3xl md:text-4xl font-bold text-foreground mt-3">
+              Empresas que já confiam na Bancada
+            </Heading>
+          </Box>
         </motion.div>
 
         {/* Logos */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 md:gap-x-20 lg:gap-x-24"
-        >
+        <Flex className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 md:gap-x-20 lg:gap-x-24">
           {companies.map((company, index) => (
             <motion.div
               key={`${company.name}-${index}`}
@@ -52,23 +48,31 @@ export const TrustedEntitiesSection = () => {
                 y: -4,
                 transition: { duration: 0.3 }
               }}
-              className="group flex items-center justify-center"
             >
-              <img
-                src={company.logo}
-                alt={company.name}
-                className="h-12 md:h-16 lg:h-20 w-auto object-contain 
-                           grayscale opacity-75 group-hover:grayscale-0 
-                           group-hover:opacity-100 transition-all duration-500"
-              />
+              <Box className="group" display="flex" alignItems="center" justifyContent="center">
+                <Image
+                  src={company.logo}
+                  alt={company.name}
+                  h={{ base: "12", md: "16", lg: "20" }}
+                  w="auto"
+                  objectFit="contain"
+                  filter="grayscale(100%)"
+                  opacity={0.75}
+                  transition="all 0.5s ease"
+                  _groupHover={{
+                    filter: "grayscale(0%)",
+                    opacity: 1
+                  }}
+                />
+              </Box>
             </motion.div>
           ))}
-        </motion.div>
+        </Flex>
 
-        <p className="text-center text-muted-foreground text-sm mt-12">
+        <Text className="text-center text-muted-foreground text-sm mt-12">
           E muitas outras empresas
-        </p>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Box>
   );
 };
