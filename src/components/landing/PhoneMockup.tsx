@@ -9,7 +9,7 @@ export const PhoneMockup = () => {
           src="/pos2.png"
           alt="Phone Mockup"
           className="
-            w-32          /* tamanho padrão em mobile (~192px) */
+            w-36          /* tamanho padrão em mobile (~192px) */
             sm:w-80       /* a partir de sm (~640px) */
             md:w-96       /* a partir de md (~768px) */
             lg:w-[420px]  /* opcional: ainda maior em telas grandes */

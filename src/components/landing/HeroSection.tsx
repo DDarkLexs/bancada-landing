@@ -70,7 +70,6 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mb-10"
             >
               <HStack 
                 gap={4} 
@@ -87,11 +86,11 @@ export const HeroSection = () => {
                     px={10}
                     fontSize="lg"
                     fontWeight="semibold"
-                    rounded="xl"
-                    boxShadow="0 4px 14px 0 rgba(29, 87, 181, 0.39)"
+                    rounded="2xl"
+                       boxShadow="0 4px 14px 0 rgba(59, 130, 246, 0.39)"
                 _hover={{
                   transform: "translateY(-1px)",
-                  boxShadow: "0 6px 20px rgba(29, 87, 181, 0.23)",
+                  boxShadow: "0 6px 20px rgba(59, 130, 246, 0.23)",
                 }}
                     transition="all 0.3s ease"
                   >
@@ -109,7 +108,7 @@ export const HeroSection = () => {
                     px={8}
                     fontSize="lg"
                     fontWeight="semibold"
-                    rounded="xl"
+                    rounded="2xl"
                     border="2px solid"
                     borderColor="gray.300"
                     bg="white"

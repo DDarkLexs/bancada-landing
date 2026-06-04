@@ -1,7 +1,8 @@
 import { motion, Variants } from "framer-motion";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { pb } from "@/lib/pocketbase";
+import { Button, Icon } from "@chakra-ui/react";
 
 type Plan = {
   id: string;
@@ -117,50 +118,68 @@ export const PricingSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {plans.map((plan) => (
             <motion.div
               key={plan.id}
               variants={itemVariants}
-              whileHover={{ y: -12 }}
-              className={`relative rounded-3xl p-8 h-full flex flex-col border transition-all duration-300 group ${
+              whileHover={{ y: -8 }}
+              className={`relative rounded-[2rem] p-8 h-full flex flex-col border transition-all duration-300 group ${
                 plan.popular
-                  ? "border-primary/40 bg-gradient-to-br from-primary to-indigo-600 text-white shadow-2xl shadow-primary/20"
-                  : "bg-card border-border hover:border-primary/30 hover:shadow-xl"
+                  ? "border-primary/50 bg-zinc-950 text-white shadow-2xl shadow-primary/10 order-first md:order-none"
+                  : "bg-card border-border/60 hover:border-primary/30 hover:shadow-lg"
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-2  text-black px-6 py-2 rounded-full text-sm font-semibold shadow-md">
+                  <div className="flex items-center gap-2 bg-primary text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
                     <Sparkles className="w-4 h-4" />
                     Mais Popular
                   </div>
                 </div>
               )}
 
-              <div className="text-center mb-10">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className={`text-sm mb-6 min-h-[48px] ${plan.popular ? "opacity-90" : "text-muted-foreground"}`}>
+              <div className="mb-8">
+                <h3 className={`text-xl font-bold mb-2 ${plan.popular ? "text-white" : "text-foreground"}`}>
+                  {plan.name}
+                </h3>
+                <p className={`text-[15px] leading-relaxed min-h-[45px] ${plan.popular ? "text-zinc-400" : "text-muted-foreground"}`}>
                   {plan.description}
                 </p>
+              </div>
 
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-bold tracking-tighter">Kz {plan.price}</span>
-                  <span className={`text-lg ${plan.popular ? "opacity-80" : "text-muted-foreground"}`}>/mês</span>
+              <div className="mb-8">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl md:text-4xl font-bold tracking-tight">Kz {plan.price}</span>
+                  <span className={`text-sm font-medium ${plan.popular ? "text-zinc-500" : "text-muted-foreground"}`}>/mês</span>
                 </div>
               </div>
 
               {/* Features */}
-              <ul className="space-y-4 mb-10 flex-1">
+              <ul className="space-y-4  flex-1">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm">
-                    <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${plan.popular ? "text-white" : "text-emerald-500"}`} />
-                    <span>{feature}</span>
+                  <li key={i} className="flex items-center gap-3 text-[15px]">
+                    <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${plan.popular ? "bg-primary/20" : "bg-primary/10"}`}>
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span className={plan.popular ? "text-zinc-300" : "text-muted-foreground"}>{feature}</span>
                   </li>
                 ))}
               </ul>
+
+             {/*  <Button
+                width="full"
+                height="56px"
+                rounded="2xl"
+                colorScheme={plan.popular ? "blue" : "gray"}
+                variant={plan.popular ? "solid" : "outline"}
+                fontWeight="bold"
+              >
+                {plan.cta}
+                <Icon as={ArrowRight} ml={2} />
+              </Button> */}
             </motion.div>
           ))}
         </motion.div>
