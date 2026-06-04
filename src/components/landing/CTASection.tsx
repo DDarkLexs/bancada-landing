@@ -27,12 +27,12 @@ export const CTASection = () => {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="w-20 h-20 rounded-2xl bg-zinc-900 flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-primary/10 border border-zinc-800"
+            className="w-20 h-20 rounded-2xl  flex items-center justify-center mx-auto mb-8 "
           >
             <img 
               src="/icon.png" 
               alt="Icon" 
-              className="w-12 h-12" 
+              className="w-50 h-50" 
             />
           </motion.div>
 
