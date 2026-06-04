@@ -42,7 +42,7 @@ export const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-10">
-              A ferramenta completa para gerir vendas, stock e faturação.
+              A ferramenta completa para gerir vendas, stock e relatório.
             </p>
 
             {/* Benefits */}
@@ -134,8 +134,11 @@ export const HeroSection = () => {
           {/* Right Side - Phone Mockup */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -20, 0] }}
+              transition={{
+                  delay: 1.2,
+                  y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                }}
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative">
@@ -144,8 +147,8 @@ export const HeroSection = () => {
               {/* Floating badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2 }}
+                animate={{ opacity: 1, scale: 1  }}
+              
                 className="absolute -top-6 -right-6 bg-card border border-border rounded-2xl px-5 py-3 shadow-xl hidden lg:flex items-center gap-3"
               >
                 <div className="text-emerald-500">

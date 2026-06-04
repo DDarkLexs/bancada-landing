@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { pb } from "@/lib/pocketbase";
@@ -66,6 +66,23 @@ const getPlans = async (): Promise<Plan[]> => {
   }
 };
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};
+
 export const PricingSection = () => {
   const { data: plans = fallbackPlans } = useQuery({
     queryKey: ["pricing-plans"],
@@ -95,14 +112,17 @@ export const PricingSection = () => {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          {plans.map((plan) => (
             <motion.div
               key={plan.id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              variants={itemVariants}
               whileHover={{ y: -12 }}
               className={`relative rounded-3xl p-8 h-full flex flex-col border transition-all duration-300 group ${
                 plan.popular
@@ -113,7 +133,7 @@ export const PricingSection = () => {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-2 bg-white text-black px-6 py-2 rounded-full text-sm font-semibold shadow-md">
+                  <div className="flex items-center gap-2  text-black px-6 py-2 rounded-full text-sm font-semibold shadow-md">
                     <Sparkles className="w-4 h-4" />
                     Mais Popular
                   </div>
@@ -143,7 +163,7 @@ export const PricingSection = () => {
               </ul>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

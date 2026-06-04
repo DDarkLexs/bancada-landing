@@ -66,7 +66,7 @@ export const TrustedEntitiesSection = () => {
         </motion.div>
 
         <p className="text-center text-muted-foreground text-sm mt-12">
-          E muitas outras empresas em Angola
+          E muitas outras empresas
         </p>
       </div>
     </section>

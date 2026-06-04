@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Smartphone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { APP_LINK_URL } from "@/contants";
+import { Button, Icon, HStack } from "@chakra-ui/react";
 
 export const CTASection = () => {
   return (
-    <section className="py-20 md:py-32 bg-foreground relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-zinc-950 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-violet-500/10 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -27,40 +27,51 @@ export const CTASection = () => {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="w-20 h-20 rounded-2xl bg-white   flex items-center justify-center mx-auto mb-8 shadow-glow"
+            className="w-20 h-20 rounded-2xl bg-zinc-900 flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-primary/10 border border-zinc-800"
           >
-            <img src="/icon.png" className="text-primary-foreground" />
+            <img 
+              src="/icon.png" 
+              alt="Icon" 
+              className="w-12 h-12" 
+            />
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Pronto para simplificar a sua faturação?
           </h2>
-          <p className="text-lg text-background/70 mb-10 max-w-xl mx-auto">
+          
+          <p className="text-lg text-zinc-400 mb-10 max-w-xl mx-auto">
             Descubra o Bancada, o novo sistema de faturação angolano no telemóvel que torna a emissão de faturas simples, rápida e legal para o seu negócio.
           </p>
 
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to={APP_LINK_URL}>
-            <Button
-              size="xl"
-              className="bg-background text-foreground hover:bg-background/90 group"
-              >
-              Descarregar
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          <div className="flex justify-center">
+            <HStack justify="center" width="full" px={4}>
+              <Link to={APP_LINK_URL} className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  height="60px"
+                  width={{ base: "full", sm: "auto" }}
+                  px={{ base: 6, sm: 10 }}
+                  bg="white"
+                  color="black"
+                  fontSize="lg"
+                  fontWeight="bold"
+                  rounded="2xl"
+                  _hover={{
+                    bg: "white",
+                    transform: "translateY(-2px)",
+                  }}
+                  transition="all 0.3s ease"
+                >
+                  Descarregar App
+                  <Icon as={Download} mr={2} />
+                </Button>
               </Link>
-          {/*   <Button
-              variant="outline"
-              size="xl"
-              className="border-background/30 text-background hover:bg-background/10"
-            >
-              Agendar Demonstração
-            </Button> */}
+            </HStack>
           </div>
 
-          <p className="mt-8 text-sm text-background/50">
-            Configuração em menos de 5 minutos • Suporte
+          <p className="mt-8 text-sm text-zinc-500">
+            Configuração em menos de 5 minutos • Suporte dedicado
           </p>
         </motion.div>
       </div>

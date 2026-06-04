@@ -1,32 +1,45 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { UserPlus, FileEdit, Send, CreditCard } from "lucide-react";
 
 const steps = [
   {
     icon: UserPlus,
-    number: "01",
     title: "Crie a sua Conta",
     description: "Registe-se em 2 minutos. Sem cartão de crédito, sem compromisso.",
   },
   {
     icon: CreditCard,
-    number: "02",
     title: "Efetue o Pagamento",
     description: "Escolha o plano e anexe o comprovativo de pagamento.",
   },
   {
     icon: FileEdit,
-    number: "03",
     title: "Configure o Negócio",
     description: "Adicione o seu logótipo e dados fiscais.",
   },
   {
     icon: Send,
-    number: "04",
     title: "Crie e Envie Faturas",
     description: "Preencha os dados do cliente e serviço. Envie com um toque.",
   },
 ];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};
 
 export const HowItWorksSection = () => {
   return (
@@ -38,7 +51,7 @@ export const HowItWorksSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-[3px]">
             PROCESSO SIMPLES
@@ -52,44 +65,41 @@ export const HowItWorksSection = () => {
           </p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
-          {steps.map((step, index) => (
+        {/* Steps Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {steps.map((step) => (
             <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="group relative bg-card border border-border rounded-3xl p-8 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:border-primary/20"
+              key={step.title}
+              variants={itemVariants}
+              whileHover={{ y: -6 }}
+              className="group border border-border/60 rounded-3xl p-8 h-full flex flex-col hover:shadow-lg hover:border-primary/30 transition-all duration-300"
             >
-              {/* Number Indicator */}
-              <div className="flex items-center justify-between mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center text-2xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                  {step.number}
-                </div>
-                <step.icon className="w-9 h-9 text-muted-foreground group-hover:text-primary transition-colors" />
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+                <step.icon className="w-6 h-6 text-primary" />
               </div>
 
-              {/* Content */}
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-foreground mb-4 leading-tight">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-[15px]">
-                  {step.description}
-                </p>
-              </div>
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                {step.title}
+              </h3>
 
-              {/* Subtle bottom accent */}
-              <div className="h-1 w-12 bg-primary/10 group-hover:bg-primary/40 rounded-full mt-8 transition-all" />
+              {/* Description */}
+              <p className="text-muted-foreground text-[15px] leading-relaxed flex-1">
+                {step.description}
+              </p>
+
+              {/* Blue Line */}
+              <div className="h-0.5 w-10 bg-primary mt-8 rounded-full group-hover:w-16 transition-all duration-300" />
             </motion.div>
           ))}
-        </div>
-
-        {/* Optional connector line for large screens */}
-        <div className="hidden lg:block absolute left-1/2 top-[42%] w-4/5 h-px bg-gradient-to-r from-transparent via-border to-transparent -z-10" />
+        </motion.div>
       </div>
     </section>
   );

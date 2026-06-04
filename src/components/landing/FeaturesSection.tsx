@@ -100,7 +100,7 @@ export const FeaturesSection = () => {
               key={feature.title}
               variants={itemVariants}
               whileHover={{ y: -6 }}
-              className="group bg-white border border-border/60 rounded-3xl p-8 h-full flex flex-col hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+              className="group  border border-border/60 rounded-3xl p-8 h-full flex flex-col hover:shadow-lg hover:border-primary/30 transition-all duration-300"
             >
               {/* Icon - Estilo da imagem */}
               <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
