@@ -7,12 +7,31 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ExclusaoConta from "./pages/ExclusaoConta";
 import TermosPolitica from "./pages/TermosPolitica";
+import { createSystem, defaultConfig, defineConfig,ChakraProvider } from "@chakra-ui/react";
+import { ColorModeProvider } from "@/components/ui/color-mode"
 
 const queryClient = new QueryClient();
+
+const config = defineConfig({
+  theme: {
+    tokens: {
+      colors: {
+        primary: { value: "#1d57b5" },
+        secondary: { value: "#64748b" },
+      },
+    },
+  },
+  cssVarsRoot: ":where(:root, :host)",
+})
+
+const system = createSystem(defaultConfig, config)
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+       <ChakraProvider value={system}>
+        <ColorModeProvider forcedTheme="dark">
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -24,6 +43,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </ColorModeProvider>
+      </ChakraProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

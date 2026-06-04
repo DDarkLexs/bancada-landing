@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Download, CheckCircle2, MessageCircle } from "lucide-react";
+import { Download, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { PhoneMockup } from "./PhoneMockup";
 import { APP_LINK_URL, CONTACT_LINK_URL } from "@/contants";
+import { Button, HStack, Icon, Text, Box, Image } from "@chakra-ui/react";
 
 const benefits = [
   "Faturas rápidas",
@@ -61,43 +61,74 @@ export const HeroSection = () => {
               ))}
             </div>
 
-            {/* CTAs */}
+            {/* CTAs - Melhorados com Chakra UI */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Link to={APP_LINK_URL}>
-                <Button
-                  size="xl"
-                  className="group text-lg font-semibold px-10 py-7 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-xl transition-all duration-300"
-                >
-                  <Download className="w-6 h-6 mr-3 group-hover:-translate-y-0.5 transition-transform" />
-                  Descarregar App
-                </Button>
-              </Link>
+              <HStack 
+                gap={4} 
+                justify={{ base: "center", lg: "start" }}
+                flexDirection={{ base: "column", sm: "row" }}
+              >
+                {/* Botão Principal - Download */}
+                <Link to={APP_LINK_URL}>
+                  <Button
+                    size="lg"
+                    colorScheme="blue"
+                    height="68px"
+                    width={{ base: "full", sm: "auto" }}
+                    px={10}
+                    fontSize="lg"
+                    fontWeight="semibold"
+                    rounded="2xl"
+                    shadow="lg"
+                    _hover={{
+                      shadow: "xl",
+                      transform: "translateY(-2px)",
+                    }}
+                    transition="all 0.3s ease"
+                  >
+                    <Icon as={Download} boxSize={5} mr={2} />
+                    Descarregar App
+                  </Button>
+                </Link>
 
-              <Link to={CONTACT_LINK_URL}>
-                <Button
-                  variant="heroOutline"
-                  size="xl"
-                  className="group text-lg font-semibold py-7 rounded-2xl border-2 transition-all flex items-center gap-3"
-                >
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-                    alt="WhatsApp" 
-                    className="w-6 h-6 group-hover:scale-110 transition-transform"
-                  />
-                  <span className="whitespace-nowrap"
-                  >Falar no WhatsApp</span>
-                </Button>
-              </Link>
+                {/* Botão WhatsApp */}
+                <Link to={CONTACT_LINK_URL}>
+                  <Button
+                    size="lg"
+                    height="68px"
+                    width={{ base: "full", sm: "auto" }}
+                    px={8}
+                    fontSize="lg"
+                    fontWeight="semibold"
+                    rounded="2xl"
+                    border="2px solid"
+                    borderColor="gray.300"
+                    bg="white"
+                    color="gray.800"
+                    _hover={{
+                      bg: "#25D366",
+                      color: "white",
+                      borderColor: "#25D366",
+                      transform: "translateY(-2px)",
+                    }}
+                    transition="all 0.3s ease"
+                  >
+                    <Image
+                      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                      w="25px"
+                      h="25px"
+                      alt="WhatsApp"
+                      mr={2}
+                    />
+                    Falar no WhatsApp
+                  </Button>
+                </Link>
+              </HStack>
             </motion.div>
-
-          {/*   <p className="mt-8 text-sm text-muted-foreground">
-              +5.000 empresas já estão a usar • Sem cartão necessário
-            </p> */}
           </motion.div>
 
           {/* Right Side - Phone Mockup */}
