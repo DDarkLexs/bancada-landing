@@ -44,7 +44,7 @@ const fallbackPlans: Plan[] = [
   },
 ];
 
-const mapPlanToCard = (record: any): Plan => ({
+const mapPlanToCard = (record): Plan => ({
   id: record.id,
   name: record.title || "Plano",
   price: typeof record.price === "number" ? record.price.toLocaleString("pt-PT") : "0",
@@ -152,7 +152,7 @@ export const PricingSection = () => {
 
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-3xl md:text-4xl font-bold tracking-tight">Kz {plan.price}</span>
+                  <span className="text-4xl md:text-4xl font-bold tracking-tight">Kz {plan.price}</span>
                   <span className={`text-sm font-medium ${plan.popular ? "text-zinc-500" : "text-muted-foreground"}`}>/mês</span>
                 </div>
               </div>
