@@ -4,6 +4,7 @@ import {
   Zap,
   Globe,
   BarChart3,
+  WifiOff,
   Users,
   Smartphone,
   Package,
@@ -12,18 +13,13 @@ import {
 const features = [
   {
     icon: FileText,
-    title: "Faturas Profissionais",
-    description: "Crie faturas em menos de 30 segundos. Design moderno e profissional.",
-  },
-  {
-    icon: Globe,
-    title: "Multi-moeda",
-    description: "Fature em euros ou qualquer outra moeda. Ideal para clientes internacionais.",
+    title: "Documentos Profissionais",
+    description: "Emita orçamentos, faturas proforma, faturas, faturas-recibo, recibos e notas de crédito em segundos.",
   },
   {
     icon: Package,
     title: "Gestão de Stock",
-    description: "Controle de inventário integrado. Atualização automática ao faturar.",
+    description: "Controle de inventário integrado. Atualização automática ao emitir documento.",
   },
   {
     icon: BarChart3,
@@ -36,16 +32,27 @@ const features = [
     description: "Registo rápido de clientes para emissão ágil de faturas.",
   },
   {
+    icon: WifiOff,
+    title: "Funciona Offline",
+    description: "Continue a emitir documento mesmo sem internet.",
+  },
+  {
     icon: Smartphone,
     title: "100% Mobile",
-    description: "Fature de qualquer lugar. Interface otimizada para telemóvel.",
+    description: "Emita documentos de qualquer lugar. Interface otimizada para telemóvel.",
   },
   {
     icon: Zap,
     title: "Envio Instantâneo",
-    description: "Envie por email, WhatsApp ou SMS. O cliente recebe na hora.",
+    description: "Envie documentos por email, WhatsApp ou SMS. O cliente recebe na hora.",
   },
-];
+    {
+    icon: Globe,
+    title: "Multi-moeda",
+    description: "Emita documentos em euros ou qualquer outra moeda. Ideal para clientes internacionais.",
+  },
+]; 
+
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },

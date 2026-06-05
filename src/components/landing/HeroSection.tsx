@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Download, CheckCircle2, Check, Zap, WifiOff, Package, BarChart3, Users, Headset } from "lucide-react";
+import { Download, CheckCircle2, Check, FileText, WifiOff, Package, BarChart3, Users, Headset } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PhoneMockup } from "./PhoneMockup";
 import { APP_LINK_URL, CONTACT_LINK_URL } from "@/contants";
 import { Button, HStack, Icon, Text, Box, Image } from "@chakra-ui/react";
 
 const benefits = [
-  { label: "Faturas rápidas", icon: Zap },
+  { label: "Documentos rápidos", icon: FileText },
   { label: "Funciona sem internet", icon: WifiOff },
   { label: "Controlo de stock", icon: Package },
   { label: "Relatórios claros", icon: BarChart3 },

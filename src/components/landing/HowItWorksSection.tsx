@@ -4,8 +4,8 @@ import { UserPlus, FileEdit, Send, CreditCard } from "lucide-react";
 const steps = [
   {
     icon: UserPlus,
-    title: "Crie a sua Conta",
-    description: "Registe-se em 2 minutos. Sem cartão de crédito, sem compromisso.",
+    title: "Crie o seu Negócio",
+    description: "Registe a sua empresa em 2 minutos. Sem cartão de crédito, sem compromisso.",
   },
   {
     icon: CreditCard,
