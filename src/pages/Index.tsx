@@ -6,12 +6,14 @@ import { HowItWorksSection } from "@/components/landing/HowItWorksSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
+import { CookieConsent } from "@/components/landing/CookieConsent";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
+        {/* <CookieConsent /> */}
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
