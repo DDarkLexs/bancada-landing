@@ -34,7 +34,7 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-6">
               <div className="w-20 h-20 rounded-xl  flex items-center justify-center">
-                <img src="/icon.png" className="text-primary-foreground" />
+                <img src="/bancada_2.png" className="rounded-3xl text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-foreground">Bancada</span>
             </a>

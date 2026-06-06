@@ -6,6 +6,7 @@ const companies = [
   { name: "Empresa 2", logo: "/assets/entities/5f24a191_cf04_428e_9feb_ca1c37c07ae9_vhndac9xwq_pf8kbsoalm.png" },
   { name: "Casa de Aves", logo: "/assets/entities/casa_de_aves.jpeg" },
   { name: "F. P. Dalas", logo: "/assets/entities/F_P_DALAS.jpeg" },
+  { name: "EMPRESA 4", logo: "/assets/entities/1f411006_882d_40ad_81f5_34f4e333d915_mnlc9en571_ui9ulg3nth.jpeg" },
   { name: "Empresa 5", logo: "/assets/entities/206d289f_3073_449b_9db6_41f8d3568a6d_aadcb1gpzn_5qfrt5xr5i.png" },
   { name: "Empresa 6", logo: "/assets/entities/b23558ea_e3bb_47ee_b184_ba6d3cc443bb_5m877x267s.jpeg" },
 ];
@@ -53,7 +54,7 @@ export const TrustedEntitiesSection = () => {
                 <Image
                   src={company.logo}
                   alt={company.name}
-                  h={{ base: "12", md: "16", lg: "20" }}
+                  h={{ base: "12", md: "16", lg: "28" }}
                   w="auto"
                   objectFit="contain"
                   filter="grayscale(100%)"

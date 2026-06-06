@@ -24,12 +24,12 @@ export const Header = () => {
             <Box 
               w="40px" 
               h="40px" 
-              rounded="xl" 
+              rounded="md" 
               overflow="hidden"
               transition="transform 0.3s ease"
               _groupHover={{ transform: "scale(1.05)" }}
             >
-               <Image src="/icon.png" alt="Bancada Logo" objectFit="contain" />
+               <Image src="/bancada_2.png" alt="Bancada Logo" objectFit="contain" />
             </Box>
             <span className="text-xl font-bold tracking-tight text-foreground">Bancada</span>
           </Link>

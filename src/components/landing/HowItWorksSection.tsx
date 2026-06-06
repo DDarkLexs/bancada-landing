@@ -1,10 +1,10 @@
 import { motion, Variants } from "framer-motion";
-import { UserPlus, FileEdit, Send, CreditCard } from "lucide-react";
+import { UserPlus, FileEdit, Send, CreditCard,Building,Box } from "lucide-react";
 
 const steps = [
   {
-    icon: UserPlus,
-    title: "Crie o seu Negócio",
+    icon: Building,
+    title: "Crie a sua empresa",
     description: "Registe a sua empresa em 2 minutos. Sem cartão de crédito, sem compromisso.",
   },
   {
@@ -13,9 +13,9 @@ const steps = [
     description: "Escolha o plano e anexe o comprovativo de pagamento.",
   },
   {
-    icon: FileEdit,
-    title: "Configure o Negócio",
-    description: "Adicione o seu logótipo e dados fiscais.",
+    icon: Box,
+    title: "Crie os seus Artigos",
+    description: "Adicione os seus produtos ou serviços com preços e categorias.",
   },
   {
     icon: Send,

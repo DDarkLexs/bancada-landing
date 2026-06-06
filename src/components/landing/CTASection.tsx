@@ -30,9 +30,9 @@ export const CTASection = () => {
             className="w-20 h-20 rounded-2xl  flex items-center justify-center mx-auto mb-8 "
           >
             <img 
-              src="/icon.png" 
+              src="/bancada_2.png" 
               alt="Icon" 
-              className="w-50 h-50" 
+              className="w-50 h-50 rounded-3xl" 
             />
           </motion.div>
 

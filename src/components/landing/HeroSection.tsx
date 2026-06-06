@@ -27,11 +27,11 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
             className="text-center lg:text-left pt-8 lg:pt-0"
           >
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse" />
               <span className="text-sm font-medium text-primary">
                 Disponível para Android
               </span>
