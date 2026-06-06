@@ -1,4 +1,4 @@
-interface BaseCollection {
+export interface BaseCollection {
   collectionId: string;
   collectionName: string;
   id: string;
@@ -6,7 +6,7 @@ interface BaseCollection {
   updated: string;
 }
 
-interface IEntity extends BaseCollection {
+export interface IEntity extends BaseCollection {
   image: string;
   name: string;
   slogan: string;
@@ -20,7 +20,7 @@ interface IEntity extends BaseCollection {
   active: boolean;
 }
 
-interface IUser extends BaseCollection {
+export interface IUser extends BaseCollection {
   email: string;
   emailVisibility: boolean;
   password: string;
@@ -30,7 +30,7 @@ interface IUser extends BaseCollection {
   avatar: string;
 }
 
-interface IBackup extends BaseCollection {
+export interface IBackup extends BaseCollection {
   store: string;
   deviceId: string;
   file: string;
@@ -38,7 +38,7 @@ interface IBackup extends BaseCollection {
   note: string;
 }
 
-interface ILicense extends BaseCollection {
+export interface ILicense extends BaseCollection {
   key: string;
   active: boolean;
   deviceId: string;
@@ -47,7 +47,7 @@ interface ILicense extends BaseCollection {
   expires: string;
 }
 
-interface IOrder extends BaseCollection {
+export interface IOrder extends BaseCollection {
   Store: string;
   License: string;
   Subscription: string;
@@ -56,13 +56,13 @@ interface IOrder extends BaseCollection {
   status: "Pending" | "Processing" | "Completed" | "Cancelled";
 }
 
-interface IPlan extends BaseCollection {
+export interface IPlan extends BaseCollection {
   title: string;
   price: number;
   description: string;
 }
 
-interface IPaymentMethod extends BaseCollection {
+export interface IPaymentMethod extends BaseCollection {
   image?: string;
   title: string;
   description?: string;
@@ -70,7 +70,7 @@ interface IPaymentMethod extends BaseCollection {
   type?: string;
 }
 
-interface IPromotion extends BaseCollection {
+export interface IPromotion extends BaseCollection {
   Plan: string;
   title: string;
   type: "percentage" | "fixed";
@@ -79,13 +79,13 @@ interface IPromotion extends BaseCollection {
   endDate: string;
 }
 
-interface IPlanFeature extends BaseCollection {
+export interface IPlanFeature extends BaseCollection {
   plan_id: string;
   feature_id: string[];
   enabled: boolean;
 }
 
-interface IFeature extends BaseCollection {
+export interface IFeature extends BaseCollection {
   title: string;
   description: string;
 }
