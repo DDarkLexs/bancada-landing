@@ -6,7 +6,6 @@ import { Button, Icon, Link as ChakraLink } from "@chakra-ui/react";
 import { CONTACT_LINK_URL } from "@/contants";
 import { Tables } from "@/lib/tables";
 import { IFeature, IPlan, IPlanFeature, IPromotion } from "@/lib/types";
-
 type Plan = {
   id: string;
   name: string;
@@ -18,6 +17,7 @@ type Plan = {
   popular: boolean;
 };
 
+const popularID = '116oi8m0h5lsh9z'
 const fallbackPlans: Plan[] = [
   {
     id: "base",
@@ -164,12 +164,12 @@ export const PricingSection = () => {
               variants={itemVariants}
               whileHover={{ y: -8 }}
               className={`relative rounded-[2rem] p-8 h-full flex flex-col border transition-all duration-300 group ${
-                plan.popular
-                  ? "border-primary/50 bg-zinc-950 text-white shadow-2xl shadow-primary/10 scale-105 md:scale-110 z-10"
+                plan.id === popularID
+                  ? "border-primary/50  text-white shadow-2xl shadow-primary/10 scale-105 md:scale-110 z-10"
                   : "bg-card border-border/60 hover:border-primary/30 hover:shadow-lg"
               }`}
             >
-              {plan.popular && (
+              {plan.id === popularID && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <div className="flex items-center gap-2 bg-primary text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
                     <Sparkles className="w-4 h-4" />
@@ -179,10 +179,10 @@ export const PricingSection = () => {
               )}
 
               <div className="mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? "text-white" : "text-foreground"}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${plan.id === popularID ? "text-white" : "text-foreground"}`}>
                   {plan.name}
                 </h3>
-                <p className={`text-[15px] leading-relaxed min-h-[48px] ${plan.popular ? "text-zinc-400" : "text-muted-foreground"}`}>
+                <p className={`text-[15px] leading-relaxed min-h-[48px] ${plan.id === popularID ? "text-zinc-400" : "text-muted-foreground"}`}>
                   {plan.description}
                 </p>
               </div>
@@ -190,13 +190,13 @@ export const PricingSection = () => {
               <div className="mb-8">
                 <div className="flex flex-col">
                   {plan.oldPrice && (
-                    <span className={`text-xl line-through mb-1 ${plan.popular ? "text-zinc-500" : "text-zinc-400"}`}>
+                    <span className={`text-xl line-through mb-1 ${plan.id === popularID ? "text-zinc-500" : "text-zinc-400"}`}>
                       Kz {plan.oldPrice}
                     </span>
                   )}
                   <div className="flex items-baseline gap-1">
                     <span className="text-5xl font-bold tracking-tighter">Kz {plan.price}</span>
-                    <span className={`text-sm font-medium ${plan.popular ? "text-zinc-500" : "text-muted-foreground"}`}>/mês</span>
+                    <span className={`text-sm font-medium ${plan.id === popularID ? "text-zinc-500" : "text-muted-foreground"}`}>/mês</span>
                   </div>
                 </div>
               </div>
@@ -204,10 +204,10 @@ export const PricingSection = () => {
               <ul className="space-y-4 flex-1 mb-8">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-[15px]">
-                    <div className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center ${plan.popular ? "bg-primary/20" : "bg-primary/10"}`}>
+                    <div className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center ${plan.id === popularID ? "bg-primary/20" : "bg-primary/10"}`}>
                       <Check className="w-3.5 h-3.5 text-primary" />
                     </div>
-                    <span className={plan.popular ? "text-zinc-300" : "text-muted-foreground"}>
+                    <span className={plan.id === popularID ? "text-zinc-300" : "text-muted-foreground"}>
                       {feature}
                     </span>
                   </li>
@@ -223,8 +223,8 @@ export const PricingSection = () => {
                   width="full"
                   height="56px"
                   rounded="2xl"
-                  colorPalette={plan.popular ? "blue" : "gray"}
-                  variant={plan.popular ? "solid" : "outline"}
+                  colorPalette={plan.id === popularID ? "blue" : "gray"}
+                  variant={plan.id === popularID ? "solid" : "outline"}
                   fontWeight="bold"
                 >
                   {plan.cta}
