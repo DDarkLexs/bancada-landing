@@ -2,7 +2,8 @@ import { motion, Variants } from "framer-motion";
 import { Check, Sparkles, ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { pb } from "@/lib/pocketbase";
-import { Button, Icon } from "@chakra-ui/react";
+import { Button, Icon, Link as ChakraLink } from "@chakra-ui/react";
+import { CONTACT_LINK_URL } from "@/contants";
 import { Tables } from "@/lib/tables";
 import { IFeature, IPlan, IPlanFeature, IPromotion } from "@/lib/types";
 
@@ -70,10 +71,10 @@ const mapPlanToCard = (record: IPlan & { expand? }): Plan => {
   const planFeatures: IPlanFeature[] = record.expand?.[`${Tables.PLANFEATURE}_via_plan_id`] || [];
   
   const allFeatures = planFeatures.flatMap((pf: any) => {
-    const features = pf.expand?.feature_id || [];
-    return Array.isArray(features) 
-      ? features.map((f: IFeature) => f.title)
-      : [];
+    const featureData = pf.expand?.feature_id;
+    if (!featureData) return [];
+    const featuresArray = Array.isArray(featureData) ? featureData : [featureData];
+    return featuresArray.map((f: IFeature) => f.title);
   });
 
   return {
@@ -99,18 +100,21 @@ const getPlans = async (): Promise<Plan[]> => {
       expand: `${Tables.PLANFEATURE}_via_plan_id.feature_id,${Tables.PROMOTION}_via_${Tables.PLAN}`,
     });
 
+    console.log("Dados brutos do PocketBase (Planos):", response);
+
     if (!response?.length) return fallbackPlans;
 
     return response.map(mapPlanToCard);
   } catch (error) {
     console.error("Erro ao buscar planos:", error);
+    // Retornamos fallback em caso de erro para não quebrar a UI
     return fallbackPlans;
   }
 };
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 };
 
 const itemVariants: Variants = {
@@ -146,7 +150,6 @@ export const PricingSection = () => {
             Comece grátis e escale conforme o seu negócio cresce. Valores em Kwanza.
           </p>
         </motion.div>
-
         {/* Pricing Cards */}
         <motion.div
           variants={containerVariants}
@@ -187,7 +190,7 @@ export const PricingSection = () => {
               <div className="mb-8">
                 <div className="flex flex-col">
                   {plan.oldPrice && (
-                    <span className={`text-sm line-through mb-1 ${plan.popular ? "text-zinc-500" : "text-zinc-400"}`}>
+                    <span className={`text-xl line-through mb-1 ${plan.popular ? "text-zinc-500" : "text-zinc-400"}`}>
                       Kz {plan.oldPrice}
                     </span>
                   )}
@@ -211,17 +214,23 @@ export const PricingSection = () => {
                 ))}
               </ul>
 
-              <Button
-                width="full"
-                height="56px"
-                rounded="2xl"
-                colorScheme={plan.popular ? "blue" : "gray"}
-                variant={plan.popular ? "solid" : "outline"}
-                fontWeight="bold"
+              <ChakraLink
+                href={`${CONTACT_LINK_URL}?text=Olá! Gostaria de saber mais sobre o plano ${plan.name}.`}
+                target="_blank"
+                style={{ textDecoration: 'none' }}
               >
-                {plan.cta}
-                <Icon as={ArrowRight} ml={2} />
-              </Button>
+                <Button
+                  width="full"
+                  height="56px"
+                  rounded="2xl"
+                  colorPalette={plan.popular ? "blue" : "gray"}
+                  variant={plan.popular ? "solid" : "outline"}
+                  fontWeight="bold"
+                >
+                  {plan.cta}
+                  <Icon as={ArrowRight} ml={2} />
+                </Button>
+              </ChakraLink>
             </motion.div>
           ))}
         </motion.div>
