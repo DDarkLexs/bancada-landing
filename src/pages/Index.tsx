@@ -7,6 +7,7 @@ import { PricingSection } from "@/components/landing/PricingSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
 import { CookieConsent } from "@/components/landing/CookieConsent";
+import { VideoGuide } from "@/components/landing/VideoGuide";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <HowItWorksSection />
         <PricingSection />
         <TrustedEntitiesSection />
+        <VideoGuide />
         <CTASection />
       </main>
       <Footer />
