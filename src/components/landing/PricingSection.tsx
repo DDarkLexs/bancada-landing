@@ -100,8 +100,6 @@ const getPlans = async (): Promise<Plan[]> => {
       expand: `${Tables.PLANFEATURE}_via_plan_id.feature_id,${Tables.PROMOTION}_via_${Tables.PLAN}`,
     });
 
-    console.log("Dados brutos do PocketBase (Planos):", response);
-
     if (!response?.length) return fallbackPlans;
 
     return response.map(mapPlanToCard);
