@@ -117,7 +117,7 @@ export const VideoGuide = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-[3px]">
-            GUIA RÁPIDO
+            GUIA DE UTILIZAÇÃO
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
             Veja como funciona
