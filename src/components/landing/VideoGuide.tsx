@@ -11,6 +11,12 @@ interface VideoCard {
 
 const videoCards: VideoCard[] = [
   {
+    title: "Visão Geral",
+    description: "Conheça o que é o Bancada e como funciona.",
+    videoUrl: "https://youtube.com/shorts/euXYxlnRmP4?autoplay=1",
+    thumbnail: "https://youtube.com/shorts/euXYxlnRmP4/maxresdefault.jpg",
+  },
+  {
     title: "Como Registar Conta",
     description: "Aprenda a criar sua conta em poucos passos.",
     videoUrl: "https://www.youtube.com/embed/yN-4MkxOxio?autoplay=1",
