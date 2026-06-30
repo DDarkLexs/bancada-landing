@@ -22,16 +22,15 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <Box 
-              w="40px" 
-              h="40px" 
+              w="210px" 
               rounded="md" 
               overflow="hidden"
               transition="transform 0.3s ease"
               _groupHover={{ transform: "scale(1.05)" }}
             >
-               <Image src="/bancada_2.png" alt="Bancada Logo" objectFit="contain" />
+               <Image src="/1.png" alt="Bancada Logo" objectFit="contain" />
             </Box>
-            <span className="text-xl font-bold tracking-tight text-foreground">Bancada</span>
+            {/* <span className="text-xl font-bold tracking-tight text-foreground">Bancada</span> */}
           </Link>
 
           {/* Desktop Navigation */}
