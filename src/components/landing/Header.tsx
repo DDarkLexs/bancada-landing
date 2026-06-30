@@ -22,8 +22,8 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <Box 
-              w="210px" 
-              rounded="md" 
+              w={{ base: "150px", md: "210px" }}
+              rounded="md"
               overflow="hidden"
               transition="transform 0.3s ease"
               _groupHover={{ transform: "scale(1.05)" }}
