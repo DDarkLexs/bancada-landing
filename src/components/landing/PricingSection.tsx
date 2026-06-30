@@ -18,35 +18,7 @@ type Plan = {
 };
 
 const popularID = '116oi8m0h5lsh9z'
-const fallbackPlans: Plan[] = [
-  {
-    id: "base",
-    name: "Base",
-    price: "7.000",
-    description: "Perfeito para começar",
-    features: ["Acesso básico", "Suporte por email"],
-    cta: "Começar Grátis",
-    popular: false,
-  },
-  {
-    id: "profissional",
-    name: "Profissional",
-    price: "20.710",
-    description: "Para freelancers e pequenos negócios",
-    features: ["Tudo do Base", "Suporte prioritário", "Relatórios avançados", "Até 10 usuários"],
-    cta: "Experimentar 14 dias grátis",
-    popular: true,
-  },
-  {
-    id: "empresarial",
-    name: "Empresarial",
-    price: "53.410",
-    description: "Para equipas e empresas",
-    features: ["Tudo do Profissional", "Suporte dedicado", "Integrações avançadas", "Usuários ilimitados"],
-    cta: "Falar com Vendas",
-    popular: false,
-  },
-];
+const fallbackPlans: Plan[] = [];
 
 const mapPlanToCard = (record: IPlan & { expand? }): Plan => {
   const price = Number(record.price) || 0;
