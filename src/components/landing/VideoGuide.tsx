@@ -13,8 +13,8 @@ const videoCards: VideoCard[] = [
   {
     title: "Visão Geral",
     description: "Conheça o que é o Bancada e como funciona.",
-    videoUrl: "https://youtube.com/shorts/euXYxlnRmP4?autoplay=1",
-    thumbnail: "https://youtube.com/shorts/euXYxlnRmP4/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/shorts/embed/euXYxlnRmP4?autoplay=1",
+    thumbnail: "https://img.youtube.com/vi/euXYxlnRmP4/maxresdefault.jpg",
   },
   {
     title: "Como Registar Conta",
